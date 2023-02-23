@@ -1,0 +1,30 @@
+{
+  "name": "@wuapi/create",
+  "version": "1.0.0",
+  "description": "Create WU-API project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "@wuapi/create": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WuYuntaoTheGreat/wuapi-create.git"
+  },
+  "keywords": [
+    "WU",
+    "API",
+    "Create"
+  ],
+  "author": "Wu Yuntao <wuyuntao@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WuYuntaoTheGreat/wuapi-create/issues"
+  },
+  "homepage": "https://github.com/WuYuntaoTheGreat/wuapi-create#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
