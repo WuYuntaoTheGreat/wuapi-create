@@ -78,10 +78,10 @@ function createApp(pkg) {
     JSON.stringify(pkg, null, 2) + os.EOL
   )
 
-  ncp(path.join('template', 'tsconfig.json'), path.join(root, 'tsconfig.json'))
-  ncp(path.join('template', 'src'), path.join(root, 'src'), function(){
+  ncp(path.join(__dirname, 'template', 'tsconfig.json'), path.join(root, 'tsconfig.json'))
+  ncp(path.join(__dirname, 'template', 'src'), path.join(root, 'src'), function(err){
     rewriteFile(
-      path.join('template', 'src', 'project.ts'), 
+      path.join(__dirname, 'template', 'src', 'project.ts'), 
       path.join(root, 'src', 'project.ts'), 
       {
         "{{project_name}}"     : pkg.name,
