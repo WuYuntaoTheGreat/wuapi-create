@@ -56,10 +56,9 @@ function createApp(pkg) {
   delete pkg.package
 
   pkg.scripts = {
-    "build"        : "tsc",
-    "run"          : "node build/index.js",
-    "web-prepare"  : "ncp ./node_modules/@wuapi/web/dist ./dist && node build/index.js -o dist -r",
-    "web-serv"     : "http-server ./dist",
+    "build"       : "tsc",
+    "run"         : "node build/index.js",
+    "serv"        : "node build/index.js -w && http-server ./out/web",
   }
   pkg.devDependencies = {
     "typescript"        : "^4.9.5",
