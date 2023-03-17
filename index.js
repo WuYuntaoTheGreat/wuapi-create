@@ -61,12 +61,11 @@ function createApp(pkg) {
     "serv"        : "node build/index.js -w && http-server ./out/web",
   }
   pkg.devDependencies = {
-    "typescript"        : "^4.9.5",
-    "@types/node"       : "^18.14.0",
-    "@wuapi/processor"  : "^1.0.3",
-    "@wuapi/web"        : "^0.0.1",
-    "http-server"       : "^14.1.1",
-    "ncp"               : "^2.0.0",
+    "@types/node"          : "^18.14.0",
+    "@wuapi/generator"     : "^1.0.4",
+    "@wuapi/processor"     : "^1.0.8",
+    "http-server"          : "^14.1.1",
+    "typescript"           : "^4.9.5"
   }
 
   const root = path.resolve(pkg.name)
