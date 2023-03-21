@@ -1,12 +1,13 @@
 import prj from './project'
 import { WuApi } from '@wuapi/processor'
-import {JavaPlugin, SwiftPlugin} from '@wuapi/generator'
+import * as gen from '@wuapi/generator'
 
 
 const api = new WuApi()
 
-api.use(new JavaPlugin)
-api.use(new SwiftPlugin)
+api.use(new gen.JavaPlugin)
+api.use(new gen.SwiftPlugin)
+api.use(new gen.GradlePlugin)
 
 api.main(process.argv, prj)
 
