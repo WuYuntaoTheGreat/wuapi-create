@@ -7,6 +7,7 @@ const path      = require('path');
 const os        = require('os');
 const fs        = require('fs-extra');
 const ncp       = require('ncp');
+const devDep    = require('./devDependencies.json')
 
 function main() {
   let questions = [
@@ -60,13 +61,14 @@ function createApp(pkg) {
     "run"         : "node build/index.js",
     "serv"        : "node build/index.js -w && http-server ./out/web",
   }
-  pkg.devDependencies = {
-    "@types/node"          : "^18.14.0",
-    "@wuapi/generator"     : "^1.0.4",
-    "@wuapi/processor"     : "^1.0.8",
-    "http-server"          : "^14.1.1",
-    "typescript"           : "^4.9.5"
-  }
+  //pkg.devDependencies = {
+  //  "@types/node"          : "^18.14.0",
+  //  "@wuapi/generator"     : "^1.0.4",
+  //  "@wuapi/processor"     : "^1.0.8",
+  //  "http-server"          : "^14.1.1",
+  //  "typescript"           : "^4.9.5"
+  //}
+  pkg.devDependencies = devDep
 
   const root = path.resolve(pkg.name)
   
