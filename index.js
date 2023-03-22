@@ -79,7 +79,7 @@ function createApp(pkg) {
   )
 
   ncp(path.join(__dirname, 'template', 'tsconfig.json'), path.join(root, 'tsconfig.json'))
-  ncp(path.join(__dirname, 'template', 'src'), path.join(root, 'src'), function(err){
+  ncp(path.join(__dirname, 'template', 'src'), path.join(root, 'src'), function(_){
     rewriteFile(
       path.join(__dirname, 'template', 'src', 'project.ts'), 
       path.join(root, 'src', 'project.ts'), 
@@ -95,7 +95,7 @@ function createApp(pkg) {
 function rewriteFile(src, dst, map){
   let content = fs.readFileSync(src).toString()
   for(var key in map){
-    content = content.replace(key, map[key])
+    content = content.replaceAll(key, map[key])
   }
   fs.writeFileSync(dst, content) 
 }
