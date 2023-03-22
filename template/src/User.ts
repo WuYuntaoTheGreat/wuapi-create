@@ -18,7 +18,7 @@ export const User = createEntity()
 
 export const ReqLogin = createEntity()
   .extends(BaseReq)
-  .pth("/user/login")
+  .pth("user/login")
   .know("C", obj({
     ReqLoginContent: createEntity()
       .setFields({
