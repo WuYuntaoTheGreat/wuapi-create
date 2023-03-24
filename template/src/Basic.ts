@@ -1,5 +1,5 @@
 import { createEntity, createEnum, enu, itm, str, unknown } from "@wuapi/processor"
-import { Entity, idd, obj } from "@wuapi/processor/lib/Definitions"
+import { idd, obj } from "@wuapi/processor/lib/Definitions"
 
 export const Status = createEnum()
   .setItems({

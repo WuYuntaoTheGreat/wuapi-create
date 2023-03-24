@@ -19,25 +19,25 @@ export const User = createEntity()
 export const ReqLogin = createEntity()
   .extends(BaseReq)
   .pth("user/login")
-  .know("C", obj({
-    ReqLoginContent: createEntity()
+  .know("C", obj(
+    "ReqLoginContent", createEntity()
       .setFields({
         username  : str(),
         password  : str(),
       })
-  }))
-  .req({
-    ResLogin: createEntity()
+  ))
+  .req(
+    "ResLogin", createEntity()
       .res()
       .extends(BaseRes)
-      .know("C", obj({
-        ResLoginContent: createEntity()
-        .setFields({
-          sessionId : idd(),
-          user      : obj(User),
-        })
-      }))
-  })
+      .know("C", obj(
+        "ResLoginContent", createEntity()
+          .setFields({
+            sessionId : idd(),
+            user      : obj(User),
+          })
+      ))
+  )
 
 export const ReqUpdateUser = createEntity()
   .extends(BaseReq)
@@ -48,32 +48,32 @@ export const ReqUpdateUser = createEntity()
 export const ReqGetUser = createEntity()
   .extends(BaseReq)
   .pth("user/get")
-  .know("C", obj({
-    ReqGetUserContent: createEntity()
+  .know("C", obj(
+    "ReqGetUserContent", createEntity()
       .setFields({
         accountId: idd(),
       })
-  }))
-  .req({
-    ResGetUser: createEntity()
+  ))
+  .req(
+    "ResGetUser", createEntity()
       .extends(BaseRes)
       .know("C", obj(User))
-  })
+  )
 
 export const ReqGetFriends = createEntity()
   .extends(BaseReq)
   .pth("user/friends")
   .know("C", obj(Empty))
-  .req({
-    ResGetFriends: createEntity()
+  .req(
+    "ResGetFriends", createEntity()
       .extends(BaseRes)
-      .know("C", obj({
-        ResGetFriendsContent: createEntity()
+      .know("C", obj(
+        "ResGetFriendsContent", createEntity()
           .setFields({
             total: int(),
             content: lst(obj(User)),
           })
-      }))
-  })
+      ))
+  )
 
 
