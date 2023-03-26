@@ -1,6 +1,6 @@
 {
   "name": "@wuapi/create",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Create WU-API project",
   "main": "index.js",
   "scripts": {

@@ -1,19 +1,19 @@
 import { BaseReq, BaseRes, Empty, ResIgnore } from './Basic';
-import { createEntity, idd, int, lst, obj, str, tim } from '@wuapi/processor';
+import { createEntity, idd, int, lst, obj, str, tim, url, } from '@wuapi/processor';
 
 export const SimpleUser = createEntity()
   .setFields({
     accountId   : idd(),
-    username    : str(),
-    avatar      : str().opt(),
+    username    : str().dmo({style: "name"}),
+    avatar      : url().opt().dmo({style: "avatar"}),
   })
 
 export const User = createEntity()
   .extends(SimpleUser)
   .setFields({
     birthday    : tim().opt(),
-    nationality : str().opt(),
-    phoneNumber : str().opt(),
+    nationality : str().opt().dmo({style: "country"}),
+    phoneNumber : str().opt().dmo({style: "phone"}),
   })
 
 export const ReqLogin = createEntity()
@@ -22,8 +22,8 @@ export const ReqLogin = createEntity()
   .know("C", obj(
     "ReqLoginContent", createEntity()
       .setFields({
-        username  : str(),
-        password  : str(),
+        username  : str().dmo({style: "name"}),
+        password  : str().dmo({style: "short"}),
       })
   ))
   .req(
