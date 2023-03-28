@@ -1,6 +1,7 @@
 {
   "@types/node": "^18.14.0",
-  "@wuapi/processor": "^1.0.24",
+  "@wuapi/generator": "file:../../@wuapi/generator",
+  "@wuapi/processor": "^1.0.26",
   "http-server": "^14.1.1",
   "typescript": "^4.9.5"
 }

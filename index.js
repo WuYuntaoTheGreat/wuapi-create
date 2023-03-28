@@ -59,7 +59,7 @@ function createApp(pkg) {
   pkg.scripts = {
     "build"       : "tsc",
     "run"         : "node build/index.js",
-    "serv"        : "node build/index.js -w && http-server ./out/web",
+    "serv"        : "node build/index.js -w && http-server -p 8082 ./out/web",
   }
   //pkg.devDependencies = {
   //  "@types/node"          : "^18.14.0",

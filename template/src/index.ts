@@ -7,7 +7,6 @@ const api = new WuApi()
 
 api.use(new gen.JavaPlugin)
 api.use(new gen.SwiftPlugin)
-api.use(new gen.GradlePlugin)
 api.use(new gen.SpringPlugin)
 
 api.main(process.argv, prj)

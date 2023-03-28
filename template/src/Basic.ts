@@ -11,9 +11,9 @@ export const BaseRes = createEntity()
   .abs()
   .res()
   .setFields({
-    status    : enu(Status).dmo({fixed: "Status.SUCC"}),
-    errorMsg  : str().opt().dmo({fixed: "null"}),
-    errorCode : str().opt().dmo({fixed: "null"}),
+    status    : enu(Status).cnf({fixed: "Status.SUCC"}),
+    errorMsg  : str().opt().cnf({fixed: "null"}),
+    errorCode : str().opt().cnf({fixed: "null"}),
     content   : unknown("C").opt(),
   })
 
